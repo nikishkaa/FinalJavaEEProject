@@ -14,9 +14,8 @@
 <body>
 
 <div class="main">
-    <h1>GeeksforGeeks</h1>
+    <h1>HorseNB</h1>
     <h3>Enter your login credentials</h3>
-    <!--    POST - Secure way to send credentials to the server (Back end) -->
     <form action="login" method="post">
 
         <label for="email">
@@ -41,6 +40,7 @@
             </button>
         </div>
     </form>
+
     <p>Not registered?
         <a href="#"
            style="text-decoration: none;">
