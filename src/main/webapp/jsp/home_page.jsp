@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>HorseNB</title>
+    <title>HorseNB1</title>
 </head>
 <body>
+
+<h1 style="color: #ff385c">HorseNB</h1>
 
 </body>
 </html>
