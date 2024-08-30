@@ -16,8 +16,9 @@
 <div class="main">
     <h1>HorseNB</h1>
     <h3>Enter your login credentials</h3>
-    <form action="register" method="post">
 
+
+    <form action="register" method="post">
 
         <label for="user_name">
             Name*:
