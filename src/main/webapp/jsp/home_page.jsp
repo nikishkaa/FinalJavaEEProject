@@ -13,6 +13,12 @@
 <body>
 
 <h1 style="color: #ff385c">HorseNB</h1>
+<a style="color: #ff385c" href="login">Login</a>
+<br>
+<a style="color: #ff385c" href="register">Register</a>
+<br>
+<a style="color: #ff385c" href="recover">Forgot Password</a>
+
 
 </body>
 </html>
