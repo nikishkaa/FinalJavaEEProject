@@ -42,7 +42,7 @@
     </form>
 
     <p>Not registered?
-        <a href="#"
+        <a href="register"
            style="text-decoration: none;">
             Create an account
         </a>
