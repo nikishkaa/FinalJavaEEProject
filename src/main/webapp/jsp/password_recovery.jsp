@@ -2,21 +2,23 @@
   Created by IntelliJ IDEA.
   User: Nikita
   Date: 30.08.2024
-  Time: 14:10
+  Time: 22:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login</title>
+    <title>Recover Password</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
 <body>
 
 <div class="main">
     <h1>HorseNB</h1>
-    <h3>Enter your login credentials</h3>
-    <form action="login" method="post">
+    <h3>Password Recovery</h3>
+
+
+    <form action="recover" method="post">
 
         <label for="email">
             Email:
@@ -26,30 +28,17 @@
                name="email"
                placeholder="Enter your Email" required>
 
-        <label for="psw">
-            Password:
-        </label>
-        <input type="password"
-               id="psw"
-               name="psw"
-               placeholder="Enter your Password" required>
-
         <div class="wrap">
             <button type="submit">
-                Submit
+                Send Email
             </button>
         </div>
     </form>
 
-    <p>Not registered?
-        <a href="register"
+    <p>Registered?
+        <a href="login"
            style="text-decoration: none;">
-            Create an account
-        </a>
-    <p>Forgot a password?
-        <a href="recover"
-           style="text-decoration: none;">
-            Reset password
+            login in account
         </a>
     </p>
 </div>
