@@ -46,6 +46,11 @@
            style="text-decoration: none;">
             Create an account
         </a>
+    <p>Forgot a password?
+        <a href="#"
+           style="text-decoration: none;">
+            Reset password
+        </a>
     </p>
 </div>
 
