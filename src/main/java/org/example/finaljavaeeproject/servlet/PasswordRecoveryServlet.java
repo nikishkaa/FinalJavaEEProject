@@ -13,7 +13,7 @@ public class PasswordRecoveryServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-
+//        TODO добавить логи
         ServletUtil.forwardJsp("jsp/password_recovery", request, response);
     }
 

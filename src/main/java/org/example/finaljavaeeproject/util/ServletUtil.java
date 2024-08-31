@@ -10,7 +10,7 @@ public class ServletUtil {
 
     public static void forwardJsp(final String path, final HttpServletRequest request,
                                   final HttpServletResponse response) throws ServletException, IOException {
-//        ЗАМЕНИТЬ ЛОГИ
+        //TODO заменить логи
         System.out.println(new Date() + ". Forward to JSP:" + path);
         request.getRequestDispatcher(path + ".jsp").forward(request, response);
     }

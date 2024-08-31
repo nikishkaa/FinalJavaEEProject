@@ -13,7 +13,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-//        ДОБАВИТЬ ЛОГИ
+//        TODO добавить логи
         ServletUtil.forwardJsp("jsp/register", request, response);
 
     }
