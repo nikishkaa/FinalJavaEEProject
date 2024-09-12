@@ -18,6 +18,10 @@
 <a style="color: #ff385c" href="register">Register</a>
 <br>
 <a style="color: #ff385c" href="recover">Forgot Password</a>
+<br>
+
+
+<a style="color: #ff385c" href="recover">Forgot Password</a>
 
 
 
