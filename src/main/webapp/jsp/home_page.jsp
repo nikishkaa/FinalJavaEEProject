@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>HorseNB1</title>
+    <title>HorseNB</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
 <body>
 
@@ -22,6 +23,9 @@
 
 
 <a style="color: #ff385c" href="recover">Forgot Password</a>
+<br>
+
+<a style="color: #ff385c" href="jsp/admin-panel.jsp">Admin Panel</a>
 
 
 

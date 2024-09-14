@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 //        TODO добавить логи
-        ServletUtil.forwardJsp("jsp/login", request, response);
+        ServletUtil.forwardJsp("jsp/form/login", request, response);
     }
 
     @Override

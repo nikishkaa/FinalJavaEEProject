@@ -7,14 +7,14 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import javax.servlet.ServletException;
 
-@WebServlet(name = "PasswordRecoveryServlet", value = "/recover")
-public class PasswordRecoveryServlet extends HttpServlet {
+@WebServlet(name = "RoleServlet", value = "/add-role")
+public class RoleServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        //TODO ЛОГИ
 
-//        TODO добавить логи
-        ServletUtil.forwardJsp("jsp/form/password_recovery", request, response);
+        ServletUtil.forwardJsp("jsp/form/add_role", request, response);
     }
 
     @Override

@@ -14,7 +14,7 @@ public class RegisterServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 //        TODO добавить логи
-        ServletUtil.forwardJsp("jsp/register", request, response);
+        ServletUtil.forwardJsp("jsp/form/register", request, response);
 
     }
 
