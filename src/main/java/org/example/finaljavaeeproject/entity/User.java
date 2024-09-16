@@ -34,12 +34,12 @@ public class User {
 
 
     @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id")
     private Role role;
 
 
     @Column(name = "is_active", length = 1, nullable = false)
-    private String isActive;
+    private boolean isActive;
 
     @Column(name = "created_ts", nullable = false)
     @CreationTimestamp
