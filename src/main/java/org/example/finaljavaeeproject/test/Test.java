@@ -2,33 +2,38 @@ package org.example.finaljavaeeproject.test;
 
 import org.example.finaljavaeeproject.dao.RoleDao;
 import org.example.finaljavaeeproject.dao.UserDao;
-import org.example.finaljavaeeproject.db.JPAService;
-import org.example.finaljavaeeproject.db.config.JpaConfiguration;
 import org.example.finaljavaeeproject.entity.User;
 
 public class Test {
+    //    Test DB function
     public static void main(String[] args) {
-        JpaConfiguration configuration = new JpaConfiguration();
-        configuration.setUserName("root");
-        configuration.setPassword("");
-        configuration.setDriver("com.mysql.jdbc.Driver");
-        configuration.setUrl("jdbc:mysql://localhost:3308/final_project_db");
-        configuration.setPersistentUnit("User");
+//        createUser();
+        activateUser();
+    }
 
 
-        JPAService.initialize();
+    public static void createUser() {
         UserDao userDao = new UserDao();
         RoleDao roleDao = new RoleDao();
 
         User user = new User();
         user.setName("bob");
-        user.setEmail("fffsdffdsds");
+        user.setEmail("bob@gmail.com");
         user.setPassword("123");
         user.setActive(false);
         user.setRole(roleDao.findById(3));
 
         userDao.create(user);
+
         System.out.println(userDao);
 
+    }
+
+    public static void activateUser() {
+        UserDao userDao = new UserDao();
+        User user = userDao.findByEmail("bob@gmail.com");
+        user.setActive(true);
+
+        userDao.update(user);
     }
 }

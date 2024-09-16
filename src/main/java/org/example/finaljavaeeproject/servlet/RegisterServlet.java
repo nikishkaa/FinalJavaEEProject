@@ -60,7 +60,7 @@ public class RegisterServlet extends HttpServlet {
                 } else {
                     request.setAttribute("msg", "Error User Registration");
                     ServletUtil.forwardJsp("jsp/form/register", request, response);
-
+                    return;
                     // FIXME не работает проверка на то есть ли пользователь с таким email
                 }
 
