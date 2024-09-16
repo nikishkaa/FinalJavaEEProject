@@ -22,7 +22,7 @@ public class Test {
 
         User user = new User();
         user.setName("bob");
-        user.setEmail("fffds");
+        user.setEmail("fffsdffdsds");
         user.setPassword("123");
         user.setActive(false);
         user.setRole(roleDao.findById(3));

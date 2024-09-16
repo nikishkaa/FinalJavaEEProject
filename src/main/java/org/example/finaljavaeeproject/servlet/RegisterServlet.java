@@ -17,8 +17,6 @@ import javax.servlet.ServletException;
 @WebServlet(name = "RegisterServlet", value = "/register")
 public class RegisterServlet extends HttpServlet {
     private static final int defaultRole = 3;
-    private static final String defaultActive = "N";
-
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -56,11 +54,14 @@ public class RegisterServlet extends HttpServlet {
                 boolean isCreated = userDAO.findByEmail(email) != null;
 
                 if (isCreated) {
+                    request.setAttribute("msg", "So good");
                     // TODO send mail to activated
                     ServletUtil.forwardJsp("jsp/form/register", request, response);
                 } else {
                     request.setAttribute("msg", "Error User Registration");
-                    // TODO add massage in register form
+                    ServletUtil.forwardJsp("jsp/form/register", request, response);
+
+                    // FIXME не работает проверка на то есть ли пользователь с таким email
                 }
 
 
@@ -71,17 +72,14 @@ public class RegisterServlet extends HttpServlet {
                 String stackTrace = ExceptionUtils.getStackTrace(e);
                 request.setAttribute("cause", StringUtils.isEmpty(message) ? ExceptionUtils.getMessage(e) : message); // извлекает сообщение
                 request.setAttribute("stack-trace", stackTrace);
-                // TODO add massage in register form
-
                 ServletUtil.forwardJsp("jsp/form/register", request, response);
                 return;
             }
-            return;
 
         } else {
-            response.getWriter().println("Password missing");
-            //TODO add password message in form
-            return;
+            request.setAttribute("msg", "Passwords do not match");
+            ServletUtil.forwardJsp("jsp/form/register", request, response);
         }
+        return;
     }
 }
