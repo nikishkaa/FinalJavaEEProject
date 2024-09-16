@@ -54,7 +54,7 @@ public class RegisterServlet extends HttpServlet {
                 boolean isCreated = userDAO.findByEmail(email) != null;
 
                 if (isCreated) {
-                    request.setAttribute("msg", "So good");
+                    request.setAttribute("msg", "Check email to Activate your account");
                     // TODO send mail to activated
                     ServletUtil.forwardJsp("jsp/form/register", request, response);
                 } else {
