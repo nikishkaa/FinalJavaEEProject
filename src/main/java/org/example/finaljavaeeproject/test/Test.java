@@ -7,7 +7,7 @@ import org.example.finaljavaeeproject.entity.User;
 public class Test {
     //    Test DB function
     public static void main(String[] args) {
-//        createUser();
+        createUser();
         activateUser();
     }
 
@@ -26,7 +26,6 @@ public class Test {
         userDao.create(user);
 
         System.out.println(userDao);
-
     }
 
     public static void activateUser() {

@@ -27,5 +27,7 @@
 <a style="color: #ff385c" href="jsp/admin-panel.jsp">Admin Panel</a>
 
 
+<%--TODO добавить сервисы--%>
+
 </body>
 </html>

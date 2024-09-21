@@ -1,22 +1,17 @@
 package org.example.finaljavaeeproject.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
-@Getter
-@Setter
 @NoArgsConstructor
-@Entity(name = "User")
-@Table(name = "users")
-@ToString
-public class User {
-
+@Entity
+@Data
+@Table(name = "stables")
+public class Stables {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
@@ -25,23 +20,15 @@ public class User {
     @Column(name = "name", length = 128, nullable = false)
     private String name;
 
-    @Column(name = "email", unique = true, length = 128, nullable = false)
-    private String email;
 
-    @Column(name = "password", length = 128, nullable = false)
-    private String password;
-
-    @Column(name = "phone_number", length = 20, nullable = true)
-    private String phoneNumber;
+    //TODO ссылка на users (поле Owner)
 
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
+    //TODO ссылка на address (поле Address)
 
 
-    @Column(name = "is_active", length = 1, nullable = false)
-    private boolean isActive;
+    //TODO ссылка на info (поле Info)
+
 
     @Column(name = "created_ts", nullable = false)
     @CreationTimestamp
@@ -49,4 +36,8 @@ public class User {
 
     @Column(name = "updated_ts")
     private Timestamp updatedTs;
+
+    // TODO доделать связи и конструкторы
+
+    // TODO доделать таблицу
 }

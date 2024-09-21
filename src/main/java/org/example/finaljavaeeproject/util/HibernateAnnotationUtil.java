@@ -1,7 +1,6 @@
 package org.example.finaljavaeeproject.util;
 
-import org.example.finaljavaeeproject.entity.Role;
-import org.example.finaljavaeeproject.entity.User;
+import org.example.finaljavaeeproject.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -34,6 +33,10 @@ public class HibernateAnnotationUtil {
         Metadata metadata = new MetadataSources(serviceRegistry)
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Role.class)
+                .addAnnotatedClass(Address.class)
+                .addAnnotatedClass(ContactInfo.class)
+                .addAnnotatedClass(Horses.class)
+                .addAnnotatedClass(Stables.class)
 
 
 // Сюда включить классы!
@@ -50,7 +53,7 @@ public class HibernateAnnotationUtil {
         dbSettings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
         dbSettings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
         dbSettings.put(Environment.SHOW_SQL, "true");
-        dbSettings.put(Environment.HBM2DDL_AUTO, "update");
+        dbSettings.put(Environment.HBM2DDL_AUTO, "create");
         return dbSettings;
     }
 
