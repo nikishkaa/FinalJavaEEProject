@@ -24,8 +24,9 @@ public class Stables {
     //TODO ссылка на users (поле Owner)
 
 
-    //TODO ссылка на address (поле Address)
-
+    @ManyToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     //TODO ссылка на info (поле Info)
 

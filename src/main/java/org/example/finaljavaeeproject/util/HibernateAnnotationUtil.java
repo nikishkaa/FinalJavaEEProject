@@ -34,7 +34,7 @@ public class HibernateAnnotationUtil {
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Role.class)
                 .addAnnotatedClass(Address.class)
-                .addAnnotatedClass(ContactInfo.class)
+                .addAnnotatedClass(StableContactInfo.class)
                 .addAnnotatedClass(Horses.class)
                 .addAnnotatedClass(Stables.class)
 

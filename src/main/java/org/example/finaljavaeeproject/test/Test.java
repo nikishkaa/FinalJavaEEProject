@@ -8,7 +8,7 @@ import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 public class Test {
     //    Test DB function
     public static void main(String[] args) {
-        createUser();
+//        createUser();
         activateUser();
     }
 
@@ -18,7 +18,7 @@ public class Test {
         RoleDao roleDao = new RoleDao();
 
         User user = new User();
-        user.setName("bob");
+        user.setName("TestBob1");
         user.setEmail("bob@gmail.com");
         user.setPassword(EncryptDecryptUtils.encrypt("123"));
         user.setActive(false);

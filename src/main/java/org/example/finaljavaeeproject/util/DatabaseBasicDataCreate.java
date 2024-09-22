@@ -31,7 +31,7 @@ public class DatabaseBasicDataCreate {
 
     public static void createUsers() {
         User user = new User();
-        user.setName("bob");
+        user.setName("TestBob");
         user.setEmail("bob@gmail.com");
         user.setPassword(EncryptDecryptUtils.encrypt("123"));
         user.setActive(false);

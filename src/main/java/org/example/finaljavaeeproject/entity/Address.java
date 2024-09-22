@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @NoArgsConstructor
 @Entity
 @Data
@@ -28,6 +30,10 @@ public class Address {
 
     @Column(name = "description", nullable = true, length = 256)
     private String description;
+
+    @OneToMany(mappedBy = "address")
+    private Set<Stables> stables;
+
 
     // TODO доделать связи и конструкторы
 }
