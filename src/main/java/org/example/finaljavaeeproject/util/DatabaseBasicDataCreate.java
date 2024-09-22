@@ -43,7 +43,6 @@ public class DatabaseBasicDataCreate {
     }
 
     public static void createRoles() {
-        //Create default Roles
         Role adminRole = new Role();
         adminRole.setName("ADMIN");
 
@@ -59,5 +58,6 @@ public class DatabaseBasicDataCreate {
         roles.add(basicUserRole);
 
         roleDao.createAll(roles);
+        System.out.println("Roles Created");
     }
 }
