@@ -24,7 +24,6 @@ public class RegisterServlet extends HttpServlet {
         //TODO заменить логи
 
         ServletUtil.forwardJsp("jsp/form/register", request, response);
-
     }
 
     @Override
