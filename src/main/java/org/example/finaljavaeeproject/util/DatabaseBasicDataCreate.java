@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseBasicDataCreate {
-    private static UserDao userDao;
-    private static RoleDao roleDao;
+    private static final UserDao userDao;
+    private static final RoleDao roleDao;
 
     static {
         userDao = new UserDao();
@@ -43,7 +43,7 @@ public class DatabaseBasicDataCreate {
     }
 
     public static void createRoles() {
-    //Create default Roles
+        //Create default Roles
         Role adminRole = new Role();
         adminRole.setName("ADMIN");
 
