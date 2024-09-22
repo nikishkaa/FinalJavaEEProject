@@ -3,6 +3,7 @@ package org.example.finaljavaeeproject.test;
 import org.example.finaljavaeeproject.dao.RoleDao;
 import org.example.finaljavaeeproject.dao.UserDao;
 import org.example.finaljavaeeproject.entity.User;
+import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 
 public class Test {
     //    Test DB function
@@ -19,7 +20,7 @@ public class Test {
         User user = new User();
         user.setName("bob");
         user.setEmail("bob@gmail.com");
-        user.setPassword("123");
+        user.setPassword(EncryptDecryptUtils.encrypt("123"));
         user.setActive(false);
         user.setRole(roleDao.findById(3));
 

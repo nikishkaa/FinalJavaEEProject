@@ -1,4 +1,4 @@
-<%--
+<%@ page import="org.example.finaljavaeeproject.entity.User" %><%--
   Created by IntelliJ IDEA.
   User: Nikita
   Date: 30.08.2024
@@ -25,9 +25,30 @@
 <a style="color: #ff385c" href="logout">Logout</a>
 <br>
 <a style="color: #ff385c" href="jsp/admin-panel.jsp">Admin Panel</a>
-
+<br>
 
 <%--TODO добавить сервисы--%>
+
+
+<%--TODO переделать под JSPX--%>
+<%
+    Object object = session.getAttribute("user");
+    if (object == null) {
+%>
+    <a class="nav-link" href="login">Login</a>
+</li>
+<%
+} else {
+
+    User user = (User) object;
+
+%>
+    <h4>Hello, <%=user.getName()%>
+    </h4>
+
+    <a class="nav-link" href="logout">Logout</a>
+<%}%>
+
 
 </body>
 </html>

@@ -17,9 +17,9 @@ public class LogoutServlet extends HttpServlet {
         if (session.getAttribute("user") != null) {
             session.invalidate();
             //TODO добавить логи
-            ServletUtil.forwardJsp("home", request, response);
+            ServletUtil.forwardJsp("jsp/home_page", request, response);
         } else {
-            ServletUtil.forwardJsp("login", request, response);
+            ServletUtil.forwardJsp("jsp/form/login", request, response);
         }
 
 
