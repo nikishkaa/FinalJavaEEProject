@@ -31,15 +31,20 @@ public class DatabaseBasicDataCreate {
 
     public static void createUsers() {
         User user = new User();
-        user.setName("TestBob");
-        user.setEmail("bob@gmail.com");
-        user.setPassword(EncryptDecryptUtils.encrypt("123"));
-        user.setActive(false);
-        user.setRole(roleDao.findById(3));
+        String email = "bob@gmail.com";
+        if (userDao.findByEmail(email) == null) {
+            user.setName("TestBob");
+            user.setEmail(email);
+            user.setPassword(EncryptDecryptUtils.encrypt("123"));
+            user.setActive(false);
+            user.setRole(roleDao.findById(3));
 
-        userDao.create(user);
+            userDao.create(user);
 
-        System.out.println(userDao);
+            System.out.println(userDao);
+        } else {
+            System.out.println("User with such email already exists");
+        }
     }
 
     public static void createRoles() {

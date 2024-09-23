@@ -28,7 +28,9 @@ public class Stables {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    //TODO ссылка на info (поле Info)
+    @ManyToOne
+    @JoinColumn(name = "stable_contact_info_id")
+    private StableContactInfo contactInfo;
 
 
     @Column(name = "created_ts", nullable = false)
@@ -37,8 +39,6 @@ public class Stables {
 
     @Column(name = "updated_ts")
     private Timestamp updatedTs;
-
-    // TODO доделать связи и конструкторы
 
     // TODO доделать таблицу
 }

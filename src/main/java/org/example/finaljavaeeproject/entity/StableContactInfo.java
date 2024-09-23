@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @NoArgsConstructor
 @Entity
 @Data
@@ -23,5 +25,6 @@ public class StableContactInfo {
     @Column(name = "description", nullable = true, length = 256)
     private String description;
 
-    //TODO доделать связи и констрк=укторы
+    @OneToMany(mappedBy = "contactInfo")
+    private Set<Stables> stables;
 }
