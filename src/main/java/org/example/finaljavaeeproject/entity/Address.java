@@ -31,6 +31,7 @@ public class Address {
     @Column(name = "description", nullable = true, length = 256)
     private String description;
 
+
     @OneToMany(mappedBy = "address")
     private Set<Stables> stables;
 

@@ -21,15 +21,16 @@ public class Stables {
     private String name;
 
 
-    //TODO ссылка на users (поле Owner)
-
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false)
+    private User userOwner;
 
     @ManyToOne
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
     @ManyToOne
-    @JoinColumn(name = "stable_contact_info_id")
+    @JoinColumn(name = "stable_contact_info_id", nullable = true)
     private StableContactInfo contactInfo;
 
 
@@ -41,4 +42,5 @@ public class Stables {
     private Timestamp updatedTs;
 
     // TODO доделать таблицу
+    // TODO сделать связь многие ко многим между stable id и horse stable owner
 }

@@ -53,7 +53,7 @@ public class HibernateAnnotationUtil {
         dbSettings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
         dbSettings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
         dbSettings.put(Environment.SHOW_SQL, "true");
-        dbSettings.put(Environment.HBM2DDL_AUTO, "update");
+        dbSettings.put(Environment.HBM2DDL_AUTO, "create");
         return dbSettings;
     }
 

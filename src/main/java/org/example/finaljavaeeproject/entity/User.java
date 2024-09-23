@@ -8,6 +8,7 @@ import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -36,8 +37,14 @@ public class User {
 
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
+
+    @OneToMany(mappedBy = "userOwner")
+    private Set<Stables> stables;
+
+    @OneToMany(mappedBy = "horseUserOwner")
+    private Set<Horses> horse;
 
 
     @Column(name = "is_active", length = 1, nullable = false)

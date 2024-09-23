@@ -20,9 +20,13 @@ public class Horses {
     @Column(name = "name", length = 128, nullable = false)
     private String name;
 
-    // TODO ссылка на Stable
 
-    // TODO ссылка на Users
+    // TODO связь многие ко многим с Stables
+
+
+    @ManyToOne
+    @JoinColumn(name = "user_owner_id", nullable = false)
+    private User horseUserOwner;
 
     @Column(name = "created_ts", nullable = false)
     @CreationTimestamp
@@ -30,9 +34,6 @@ public class Horses {
 
     @Column(name = "updated_ts")
     private Timestamp updatedTs;
-
-
-    // TODO доделать связи и конструкторы
 
     // TODO доделать таблицу
 }
