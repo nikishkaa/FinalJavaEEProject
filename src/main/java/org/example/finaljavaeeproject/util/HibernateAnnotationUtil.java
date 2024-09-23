@@ -37,6 +37,7 @@ public class HibernateAnnotationUtil {
                 .addAnnotatedClass(StableContactInfo.class)
                 .addAnnotatedClass(Horses.class)
                 .addAnnotatedClass(Stables.class)
+                .addAnnotatedClass(HorseStatus.class)
 
 
 // Сюда включить классы!
@@ -53,7 +54,7 @@ public class HibernateAnnotationUtil {
         dbSettings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
         dbSettings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
         dbSettings.put(Environment.SHOW_SQL, "true");
-        dbSettings.put(Environment.HBM2DDL_AUTO, "create");
+        dbSettings.put(Environment.HBM2DDL_AUTO, "update");
         return dbSettings;
     }
 

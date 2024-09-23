@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @NoArgsConstructor
@@ -20,9 +21,19 @@ public class Horses {
     @Column(name = "name", length = 128, nullable = false)
     private String name;
 
+    @Column(name = "age", nullable = false)
+    private Date age;
+
+    @Column(name = "horse_breed", length = 128, nullable = true)
+    private String horseBreed;
+
 
     // TODO связь многие ко многим с Stables
 
+
+    @ManyToOne
+    @JoinColumn(name = "status_id", nullable = false)
+    private HorseStatus statuss;
 
     @ManyToOne
     @JoinColumn(name = "user_owner_id", nullable = false)

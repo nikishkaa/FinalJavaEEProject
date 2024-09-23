@@ -34,6 +34,9 @@ public class Stables {
     private StableContactInfo contactInfo;
 
 
+    @Column(name = "horses_capacity", nullable = false)
+    private int horseCapacity;
+
     @Column(name = "created_ts", nullable = false)
     @CreationTimestamp
     private Timestamp createdTs;
