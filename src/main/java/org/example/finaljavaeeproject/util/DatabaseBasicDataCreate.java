@@ -27,7 +27,6 @@ public class DatabaseBasicDataCreate {
     public static void createData() {
         createRoles();
         createUsers();
-
     }
 
     public static void createUsers() {
