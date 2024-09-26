@@ -35,5 +35,6 @@ public class Address {
     @OneToMany(mappedBy = "address")
     private Set<Stables> stables;
 
+
     // TODO доделать связи и конструкторы
 }
