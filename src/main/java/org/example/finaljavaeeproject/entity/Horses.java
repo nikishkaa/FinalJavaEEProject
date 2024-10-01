@@ -30,7 +30,6 @@ public class Horses {
 
     // TODO связь многие ко многим с Stables
 
-
     @ManyToOne
     @JoinColumn(name = "status_id", nullable = false)
     private HorseStatus statuss;
