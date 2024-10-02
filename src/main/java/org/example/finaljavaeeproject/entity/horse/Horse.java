@@ -55,5 +55,4 @@ public class Horse {
 
     @Column(name = "updated_ts")
     private Timestamp updatedTs;
-
 }
