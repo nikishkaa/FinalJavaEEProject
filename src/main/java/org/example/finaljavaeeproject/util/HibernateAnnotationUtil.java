@@ -1,6 +1,14 @@
 package org.example.finaljavaeeproject.util;
 
-import org.example.finaljavaeeproject.entity.*;
+import org.example.finaljavaeeproject.entity.horse.HorseStatus;
+import org.example.finaljavaeeproject.entity.horse.Horses;
+import org.example.finaljavaeeproject.entity.stable.StableAddress;
+import org.example.finaljavaeeproject.entity.stable.StableContactInfo;
+import org.example.finaljavaeeproject.entity.stable.Stables;
+import org.example.finaljavaeeproject.entity.user.Role;
+import org.example.finaljavaeeproject.entity.user.User;
+import org.example.finaljavaeeproject.entity.user.UserAddress;
+import org.example.finaljavaeeproject.entity.user.UserPhoto;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -33,11 +41,13 @@ public class HibernateAnnotationUtil {
         Metadata metadata = new MetadataSources(serviceRegistry)
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Role.class)
-                .addAnnotatedClass(Address.class)
+                .addAnnotatedClass(StableAddress.class)
                 .addAnnotatedClass(StableContactInfo.class)
                 .addAnnotatedClass(Horses.class)
                 .addAnnotatedClass(Stables.class)
                 .addAnnotatedClass(HorseStatus.class)
+                .addAnnotatedClass(UserAddress.class)
+                .addAnnotatedClass(UserPhoto.class)
 
 
 // Сюда включить классы!
@@ -54,7 +64,7 @@ public class HibernateAnnotationUtil {
         dbSettings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
         dbSettings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
         dbSettings.put(Environment.SHOW_SQL, "true");
-        dbSettings.put(Environment.HBM2DDL_AUTO, "update");
+        dbSettings.put(Environment.HBM2DDL_AUTO, "create");
         return dbSettings;
     }
 

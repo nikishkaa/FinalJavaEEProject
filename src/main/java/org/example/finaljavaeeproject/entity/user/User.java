@@ -55,6 +55,9 @@ public class User {
     @OneToMany(mappedBy = "horseUserOwner")
     private Set<Horses> horse;
 
+    @OneToMany(mappedBy = "userId")
+    private Set<UserPhoto> userId;
+
 
     @Column(name = "created_ts", nullable = false)
     @CreationTimestamp
