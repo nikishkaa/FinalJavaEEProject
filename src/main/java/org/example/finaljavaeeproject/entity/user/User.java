@@ -8,6 +8,7 @@ import lombok.ToString;
 import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.example.finaljavaeeproject.entity.stable.StableReview;
+import org.example.finaljavaeeproject.entity.workout.Workout;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -61,6 +62,12 @@ public class User {
 
     @OneToMany(mappedBy = "userId")
     private Set<StableReview> reviews;
+
+    @OneToMany(mappedBy = "client")
+    private Set<Workout> client;
+
+    @OneToMany(mappedBy = "coach")
+    private Set<Workout> coach;
 
 
     @Column(name = "created_ts", nullable = false)

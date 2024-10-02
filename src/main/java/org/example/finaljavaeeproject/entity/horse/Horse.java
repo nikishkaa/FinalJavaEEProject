@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.entity.user.UserPhoto;
+import org.example.finaljavaeeproject.entity.workout.Workout;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Date;
@@ -45,13 +46,14 @@ public class Horse {
     private Stable horseStableOwner;
 
 
-//    TODO связи OneToMany к таблицам
-//    TODO фото
-//    TODO тренировки
-//    TODO обьявления
+//    TODO обьявления связь OneToMany
+
 
     @OneToMany(mappedBy = "horseId")
     private Set<HorsePhoto> horsePhotoSet;
+
+    @OneToMany(mappedBy = "horse")
+    private Set<Workout> workouts;
 
 
     @Column(name = "created_ts", nullable = false)

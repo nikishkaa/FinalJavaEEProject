@@ -8,6 +8,8 @@ import org.example.finaljavaeeproject.entity.user.Role;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.entity.user.UserAddress;
 import org.example.finaljavaeeproject.entity.user.UserPhoto;
+import org.example.finaljavaeeproject.entity.workout.Workout;
+import org.example.finaljavaeeproject.entity.workout.WorkoutType;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -50,7 +52,8 @@ public class HibernateAnnotationUtil {
                 .addAnnotatedClass(HorsePhoto.class)
                 .addAnnotatedClass(StablePhoto.class)
                 .addAnnotatedClass(StableReview.class)
-
+                .addAnnotatedClass(Workout.class)
+                .addAnnotatedClass(WorkoutType.class)
 
 // Сюда включить классы!
                 .buildMetadata();

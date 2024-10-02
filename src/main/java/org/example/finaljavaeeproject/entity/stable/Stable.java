@@ -7,6 +7,7 @@ import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.horse.HorsePhoto;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.entity.user.UserPhoto;
+import org.example.finaljavaeeproject.entity.workout.Workout;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -50,6 +51,9 @@ public class Stable {
 
     @OneToMany(mappedBy = "stableId")
     private Set<StableReview> reviews;
+
+    @OneToMany(mappedBy = "stable")
+    private Set<Workout> workouts;
 
 
     @Column(name = "created_ts", nullable = false)
