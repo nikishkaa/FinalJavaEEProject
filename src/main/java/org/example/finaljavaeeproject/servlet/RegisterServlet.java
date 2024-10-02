@@ -2,8 +2,8 @@ package org.example.finaljavaeeproject.servlet;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.example.finaljavaeeproject.dao.RoleDao;
-import org.example.finaljavaeeproject.dao.UserDao;
+import org.example.finaljavaeeproject.dao.RoleDaoImpl;
+import org.example.finaljavaeeproject.dao.UserDaoImpl;
 import org.example.finaljavaeeproject.entity.User;
 import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 import org.example.finaljavaeeproject.util.ServletUtil;
@@ -44,8 +44,8 @@ public class RegisterServlet extends HttpServlet {
             String encryptedPassword = EncryptDecryptUtils.encrypt(password);
             user.setPassword(encryptedPassword);
 
-            UserDao userDAO = new UserDao();
-            RoleDao roleDAO = new RoleDao();
+            UserDaoImpl userDAO = new UserDaoImpl();
+            RoleDaoImpl roleDAO = new RoleDaoImpl();
 
             try {
                 user.setRole(roleDAO.findById(defaultRole));

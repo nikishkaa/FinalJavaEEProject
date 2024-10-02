@@ -1,7 +1,7 @@
 package org.example.finaljavaeeproject.test;
 
-import org.example.finaljavaeeproject.dao.RoleDao;
-import org.example.finaljavaeeproject.dao.UserDao;
+import org.example.finaljavaeeproject.dao.RoleDaoImpl;
+import org.example.finaljavaeeproject.dao.UserDaoImpl;
 import org.example.finaljavaeeproject.entity.User;
 import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 
@@ -14,8 +14,8 @@ public class Test {
 
 
     public static void createUser() {
-        UserDao userDao = new UserDao();
-        RoleDao roleDao = new RoleDao();
+        UserDaoImpl userDao = new UserDaoImpl();
+        RoleDaoImpl roleDao = new RoleDaoImpl();
 
         User user = new User();
         user.setName("TestBob1");
@@ -30,7 +30,7 @@ public class Test {
     }
 
     public static void activateUser() {
-        UserDao userDao = new UserDao();
+        UserDaoImpl userDao = new UserDaoImpl();
         User user = userDao.findByEmail("bob@gmail.com");
         user.setActive(true);
 

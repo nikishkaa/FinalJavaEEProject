@@ -1,7 +1,7 @@
 package org.example.finaljavaeeproject.util;
 
-import org.example.finaljavaeeproject.dao.RoleDao;
-import org.example.finaljavaeeproject.dao.UserDao;
+import org.example.finaljavaeeproject.dao.RoleDaoImpl;
+import org.example.finaljavaeeproject.dao.UserDaoImpl;
 import org.example.finaljavaeeproject.entity.Role;
 import org.example.finaljavaeeproject.entity.User;
 
@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseBasicDataCreate {
-    private static final UserDao userDao;
-    private static final RoleDao roleDao;
+    private static final UserDaoImpl userDao;
+    private static final RoleDaoImpl roleDao;
 
     static {
-        userDao = new UserDao();
-        roleDao = new RoleDao();
+        userDao = new UserDaoImpl();
+        roleDao = new RoleDaoImpl();
     }
 
     public static void main(String[] args) {

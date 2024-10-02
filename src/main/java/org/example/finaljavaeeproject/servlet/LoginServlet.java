@@ -1,6 +1,6 @@
 package org.example.finaljavaeeproject.servlet;
 
-import org.example.finaljavaeeproject.dao.UserDao;
+import org.example.finaljavaeeproject.dao.UserDaoImpl;
 import org.example.finaljavaeeproject.entity.User;
 import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 import org.example.finaljavaeeproject.util.ServletUtil;
@@ -12,7 +12,7 @@ import javax.servlet.ServletException;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    private UserDao userDAO = new UserDao();
+    private UserDaoImpl userDAO = new UserDaoImpl();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
