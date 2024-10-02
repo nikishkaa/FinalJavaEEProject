@@ -35,10 +35,18 @@ public class User {
     @Column(name = "phone_number", length = 20, nullable = true)
     private String phoneNumber;
 
+    @Column(name = "is_active", nullable = false)
+    private boolean isActive;
+
 
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "address", nullable = true)
+    private UserAddress address;
+
 
     @OneToMany(mappedBy = "userOwner")
     private Set<Stables> stables;
@@ -47,13 +55,10 @@ public class User {
     private Set<Horses> horse;
 
 
-    @Column(name = "is_active", length = 1, nullable = false)
-    private boolean isActive;
-
     @Column(name = "created_ts", nullable = false)
     @CreationTimestamp
     private Timestamp createdTs;
 
-    @Column(name = "updated_ts")
+    @Column(name = "updated_ts", nullable = true)
     private Timestamp updatedTs;
 }
