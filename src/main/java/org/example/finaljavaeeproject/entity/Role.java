@@ -11,16 +11,15 @@ import java.util.Set;
 @Data
 @Table(name = "roles")
 public class Role {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     private int id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, length = 128)
     private String name;
 
-    @Column(name = "description", nullable = true)
+    @Column(name = "description", nullable = true, length = 256)
     private String description;
 
 
