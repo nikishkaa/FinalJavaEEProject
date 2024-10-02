@@ -1,10 +1,12 @@
-package org.example.finaljavaeeproject.entity;
+package org.example.finaljavaeeproject.entity.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.example.finaljavaeeproject.entity.horse.Horses;
+import org.example.finaljavaeeproject.entity.stable.Stables;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -17,7 +19,6 @@ import java.util.Set;
 @Table(name = "users")
 @ToString
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)

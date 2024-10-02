@@ -1,4 +1,4 @@
-package org.example.finaljavaeeproject.entity;
+package org.example.finaljavaeeproject.entity.user;
 
 import jakarta.persistence.*;
 import lombok.Data;

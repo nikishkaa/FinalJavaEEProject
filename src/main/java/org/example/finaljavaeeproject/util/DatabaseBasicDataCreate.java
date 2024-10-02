@@ -2,8 +2,8 @@ package org.example.finaljavaeeproject.util;
 
 import org.example.finaljavaeeproject.dao.RoleDaoImpl;
 import org.example.finaljavaeeproject.dao.UserDaoImpl;
-import org.example.finaljavaeeproject.entity.Role;
-import org.example.finaljavaeeproject.entity.User;
+import org.example.finaljavaeeproject.entity.user.Role;
+import org.example.finaljavaeeproject.entity.user.User;
 
 import java.util.ArrayList;
 import java.util.List;

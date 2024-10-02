@@ -24,7 +24,7 @@
 
         <!-- mapping file, we can use Bean annotations too -->
         <!--        <mapping resource="employee.hbm.xml" />-->
-<!--        <mapping class="org.example.finaljavaeeproject.entity.User" />-->
+<!--        <mapping class="org.example.finaljavaeeproject.entity.user.User" />-->
 
     </session-factory>
 </hibernate-configuration>

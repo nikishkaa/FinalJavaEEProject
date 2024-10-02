@@ -1,4 +1,4 @@
-<%@ page import="org.example.finaljavaeeproject.entity.User" %><%--
+<%@ page import="org.example.finaljavaeeproject.entity.user.User" %><%--
   Created by IntelliJ IDEA.
   User: Nikita
   Date: 30.08.2024
