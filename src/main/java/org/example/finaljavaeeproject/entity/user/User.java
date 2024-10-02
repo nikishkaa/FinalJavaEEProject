@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.example.finaljavaeeproject.entity.horse.Horses;
-import org.example.finaljavaeeproject.entity.stable.Stables;
+import org.example.finaljavaeeproject.entity.horse.Horse;
+import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -50,10 +50,10 @@ public class User {
 
 
     @OneToMany(mappedBy = "userOwner")
-    private Set<Stables> stables;
+    private Set<Stable> stables;
 
     @OneToMany(mappedBy = "horseUserOwner")
-    private Set<Horses> horse;
+    private Set<Horse> horse;
 
     @OneToMany(mappedBy = "userId")
     private Set<UserPhoto> userId;

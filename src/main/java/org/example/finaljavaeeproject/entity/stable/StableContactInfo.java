@@ -1,4 +1,4 @@
-package org.example.finaljavaeeproject.entity;
+package org.example.finaljavaeeproject.entity.stable;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -25,6 +25,7 @@ public class StableContactInfo {
     @Column(name = "description", nullable = true, length = 256)
     private String description;
 
+
     @OneToMany(mappedBy = "contactInfo")
-    private Set<Stables> stables;
+    private Set<Stable> stables;
 }

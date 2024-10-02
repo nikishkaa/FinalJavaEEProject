@@ -1,4 +1,4 @@
-package org.example.finaljavaeeproject.entity;
+package org.example.finaljavaeeproject.entity.stable;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 import java.util.Set;
 
 @NoArgsConstructor
-@Entity
+@Entity(name = "StableAddress")
 @Data
-@Table(name = "address")
-public class Address {
+@Table(name = "stable_address")
+public class StableAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
@@ -19,7 +19,7 @@ public class Address {
     @Column(name = "country", nullable = false, length = 56)
     private String country;
 
-    @Column(name = "region", nullable = true, length = 56)
+    @Column(name = "region", nullable = false, length = 56)
     private String region;
 
     @Column(name = "building", nullable = true, length = 56)
@@ -33,8 +33,5 @@ public class Address {
 
 
     @OneToMany(mappedBy = "address")
-    private Set<Stables> stables;
-
-
-    // TODO доделать связи и конструкторы
+    private Set<Stable> stables;
 }
