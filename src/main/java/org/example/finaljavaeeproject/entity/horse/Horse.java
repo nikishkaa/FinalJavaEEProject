@@ -5,10 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.example.finaljavaeeproject.entity.user.User;
+import org.example.finaljavaeeproject.entity.user.UserPhoto;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Set;
 
 @NoArgsConstructor
 @Entity
@@ -47,6 +49,9 @@ public class Horse {
 //    TODO фото
 //    TODO тренировки
 //    TODO обьявления
+
+    @OneToMany(mappedBy = "horseId")
+    private Set<HorsePhoto> horsePhotoSet;
 
 
     @Column(name = "created_ts", nullable = false)

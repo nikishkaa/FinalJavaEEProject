@@ -1,10 +1,11 @@
 package org.example.finaljavaeeproject.util;
 
+import org.example.finaljavaeeproject.entity.horse.HorsePhoto;
 import org.example.finaljavaeeproject.entity.horse.HorseStatus;
-import org.example.finaljavaeeproject.entity.horse.Horses;
+import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.stable.StableAddress;
 import org.example.finaljavaeeproject.entity.stable.StableContactInfo;
-import org.example.finaljavaeeproject.entity.stable.Stables;
+import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.example.finaljavaeeproject.entity.user.Role;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.entity.user.UserAddress;
@@ -43,11 +44,12 @@ public class HibernateAnnotationUtil {
                 .addAnnotatedClass(Role.class)
                 .addAnnotatedClass(StableAddress.class)
                 .addAnnotatedClass(StableContactInfo.class)
-                .addAnnotatedClass(Horses.class)
-                .addAnnotatedClass(Stables.class)
+                .addAnnotatedClass(Horse.class)
+                .addAnnotatedClass(Stable.class)
                 .addAnnotatedClass(HorseStatus.class)
                 .addAnnotatedClass(UserAddress.class)
                 .addAnnotatedClass(UserPhoto.class)
+                .addAnnotatedClass(HorsePhoto.class)
 
 
 // Сюда включить классы!
