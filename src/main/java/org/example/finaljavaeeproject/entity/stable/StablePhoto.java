@@ -3,7 +3,6 @@ package org.example.finaljavaeeproject.entity.stable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;

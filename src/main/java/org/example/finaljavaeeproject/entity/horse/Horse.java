@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.example.finaljavaeeproject.entity.user.User;
-import org.example.finaljavaeeproject.entity.user.UserPhoto;
 import org.example.finaljavaeeproject.entity.workout.Workout;
 import org.hibernate.annotations.CreationTimestamp;
 

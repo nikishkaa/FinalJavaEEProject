@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.horse.Horse;
-import org.example.finaljavaeeproject.entity.horse.HorsePhoto;
 import org.example.finaljavaeeproject.entity.user.User;
-import org.example.finaljavaeeproject.entity.user.UserPhoto;
 import org.example.finaljavaeeproject.entity.workout.Workout;
 import org.hibernate.annotations.CreationTimestamp;
 
