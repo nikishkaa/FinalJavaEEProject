@@ -1,4 +1,4 @@
-package org.example.finaljavaeeproject.entity;
+package org.example.finaljavaeeproject.entity.horse;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -16,12 +16,12 @@ public class HorseStatus {
     @Column(name = "id", unique = true, nullable = false)
     private int id;
 
-    @Column(name = "name", length = 128, nullable = false)
+    @Column(name = "status_name", nullable = false, length = 128)
     private String name;
 
-    @Column(name = "description", nullable = true)
+    @Column(name = "description", nullable = true, length = 256)
     private String description;
 
-    @OneToMany(mappedBy = "statuss")
-    private Set<Horses> horses;
+    @OneToMany(mappedBy = "status")
+    private Set<Horse> horses;
 }
