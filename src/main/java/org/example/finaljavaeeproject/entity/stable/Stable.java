@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.horse.Horse;
+import org.example.finaljavaeeproject.entity.horse.HorsePhoto;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.entity.user.UserPhoto;
 import org.hibernate.annotations.CreationTimestamp;
@@ -41,10 +42,14 @@ public class Stable {
     private StableContactInfo contactInfo;
 
 
-
-
     @OneToMany(mappedBy = "horseStableOwner")
     private Set<Horse> horseId;
+
+    @OneToMany(mappedBy = "stableId")
+    private Set<StablePhoto> stablePhotos;
+
+    @OneToMany(mappedBy = "stableId")
+    private Set<StableReview> reviews;
 
 
     @Column(name = "created_ts", nullable = false)

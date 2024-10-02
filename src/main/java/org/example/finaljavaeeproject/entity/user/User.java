@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.stable.Stable;
+import org.example.finaljavaeeproject.entity.stable.StableReview;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -57,6 +58,9 @@ public class User {
 
     @OneToMany(mappedBy = "userId")
     private Set<UserPhoto> userId;
+
+    @OneToMany(mappedBy = "userId")
+    private Set<StableReview> reviews;
 
 
     @Column(name = "created_ts", nullable = false)
