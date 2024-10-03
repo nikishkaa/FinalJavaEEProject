@@ -1,7 +1,9 @@
 package org.example.finaljavaeeproject.entity.user;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
