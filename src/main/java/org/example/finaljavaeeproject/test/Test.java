@@ -29,6 +29,7 @@ public class Test {
         System.out.println(userDao);
     }
 
+
     public static void activateUser() {
         UserDaoImpl userDao = new UserDaoImpl();
         User user = userDao.findByEmail("bob@gmail.com");

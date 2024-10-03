@@ -8,11 +8,13 @@ import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 import org.example.finaljavaeeproject.util.ServletUtil;
 
-import java.io.*;
-import java.util.Date;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Date;
 
 @WebServlet(name = "RegisterServlet", value = "/register")
 public class RegisterServlet extends HttpServlet {
