@@ -1,5 +1,7 @@
 package org.example.finaljavaeeproject.util;
 
+import org.example.finaljavaeeproject.entity.announcement.AnnouncementPhoto;
+import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 import org.example.finaljavaeeproject.entity.horse.HorsePhoto;
 import org.example.finaljavaeeproject.entity.horse.HorseStatus;
 import org.example.finaljavaeeproject.entity.horse.Horse;
@@ -54,6 +56,8 @@ public class HibernateAnnotationUtil {
                 .addAnnotatedClass(StableReview.class)
                 .addAnnotatedClass(Workout.class)
                 .addAnnotatedClass(WorkoutType.class)
+                .addAnnotatedClass(HorseAnnouncement.class)
+                .addAnnotatedClass(AnnouncementPhoto.class)
 
 // Сюда включить классы!
                 .buildMetadata();

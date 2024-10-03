@@ -3,6 +3,7 @@ package org.example.finaljavaeeproject.entity.horse;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.entity.workout.Workout;
@@ -45,14 +46,14 @@ public class Horse {
     private Stable horseStableOwner;
 
 
-//    TODO обьявления связь OneToMany
-
-
     @OneToMany(mappedBy = "horseId")
     private Set<HorsePhoto> horsePhotoSet;
 
     @OneToMany(mappedBy = "horse")
     private Set<Workout> workouts;
+
+    @OneToMany(mappedBy = "horse")
+    private Set<HorseAnnouncement> announcements;
 
 
     @Column(name = "created_ts", nullable = false)

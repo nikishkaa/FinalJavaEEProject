@@ -1,10 +1,8 @@
 package org.example.finaljavaeeproject.entity.user;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.stable.Stable;
 import org.example.finaljavaeeproject.entity.stable.StableReview;
@@ -14,12 +12,10 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.sql.Timestamp;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Entity(name = "User")
 @Table(name = "users")
-@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,6 +64,9 @@ public class User {
 
     @OneToMany(mappedBy = "coach")
     private Set<Workout> coach;
+
+    @OneToMany(mappedBy = "seller")
+    private Set<HorseAnnouncement> announcements;
 
 
     @Column(name = "created_ts", nullable = false)

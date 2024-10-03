@@ -2,14 +2,13 @@ package org.example.finaljavaeeproject.entity.user;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 
 import java.util.Set;
 
 @NoArgsConstructor
-@Entity
-@Getter
+@Data
 @Setter
-@ToString
 @Table(name = "user_address")
 public class UserAddress {
     @Id
@@ -26,4 +25,7 @@ public class UserAddress {
 
     @OneToMany(mappedBy = "address")
     private Set<User> users;
+
+    @OneToMany(mappedBy = "address")
+    private Set<HorseAnnouncement> announcements;
 }

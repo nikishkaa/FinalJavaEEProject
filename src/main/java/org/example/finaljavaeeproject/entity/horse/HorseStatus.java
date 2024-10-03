@@ -22,6 +22,7 @@ public class HorseStatus {
     @Column(name = "description", nullable = true, length = 256)
     private String description;
 
+
     @OneToMany(mappedBy = "status")
     private Set<Horse> horses;
 }

@@ -1,17 +1,17 @@
-package org.example.finaljavaeeproject.entity.user;
+package org.example.finaljavaeeproject.entity.announcement;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
 @NoArgsConstructor
-@Entity(name = "UserPhoto")
+@Entity
 @Data
-@ToString
-@Table(name = "user_photo")
-public class UserPhoto {
+@Table(name = "announcement_photo")
+public class AnnouncementPhoto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
@@ -25,8 +25,8 @@ public class UserPhoto {
 
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User userId;
+    @JoinColumn(name = "horse_announcement_id", nullable = false)
+    private HorseAnnouncement announcement;
 
 
     @Column(name = "created_ts", nullable = false)
