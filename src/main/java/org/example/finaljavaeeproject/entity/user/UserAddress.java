@@ -6,6 +6,7 @@ import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 
 import java.util.Set;
 
+@Entity
 @NoArgsConstructor
 @Data
 @Setter

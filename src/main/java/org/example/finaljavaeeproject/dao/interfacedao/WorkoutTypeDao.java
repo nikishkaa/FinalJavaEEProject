@@ -1,4 +1,4 @@
 package org.example.finaljavaeeproject.dao.interfacedao;
 
-public interface HorsesDao {
+public interface WorkoutTypeDao {
 }

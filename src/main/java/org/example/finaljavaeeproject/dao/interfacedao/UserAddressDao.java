@@ -1,4 +1,4 @@
 package org.example.finaljavaeeproject.dao.interfacedao;
 
-public interface AddressDao {
+public interface UserAddressDao {
 }
