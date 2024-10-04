@@ -1,7 +1,8 @@
 package org.example.finaljavaeeproject.entity.user;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.stable.Stable;

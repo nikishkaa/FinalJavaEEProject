@@ -2,9 +2,9 @@ package org.example.finaljavaeeproject.util;
 
 import org.example.finaljavaeeproject.entity.announcement.AnnouncementPhoto;
 import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
+import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.horse.HorsePhoto;
 import org.example.finaljavaeeproject.entity.horse.HorseStatus;
-import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.stable.*;
 import org.example.finaljavaeeproject.entity.user.Role;
 import org.example.finaljavaeeproject.entity.user.User;

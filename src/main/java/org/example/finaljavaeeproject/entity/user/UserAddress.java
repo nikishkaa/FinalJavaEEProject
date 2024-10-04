@@ -1,7 +1,9 @@
 package org.example.finaljavaeeproject.entity.user;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 
 import java.util.Set;
