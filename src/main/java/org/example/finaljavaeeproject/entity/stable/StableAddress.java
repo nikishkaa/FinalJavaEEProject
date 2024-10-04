@@ -22,8 +22,17 @@ public class StableAddress {
     @Column(name = "region", nullable = false, length = 56)
     private String region;
 
+    @Column(name = "city", nullable = true, length = 56)
+    private String city;
+
+    @Column(name = "street", nullable = true, length = 56)
+    private String street;
+
     @Column(name = "building", nullable = true, length = 56)
     private String building;
+
+    @Column(name = "corpus", nullable = true, length = 56)
+    private String corpus;
 
     @Column(name = "postcode", nullable = true, length = 20)
     private String postcode;

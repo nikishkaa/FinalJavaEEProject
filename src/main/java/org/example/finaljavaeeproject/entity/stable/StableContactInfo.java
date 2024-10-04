@@ -16,11 +16,11 @@ public class StableContactInfo {
     @Column(name = "id", unique = true, nullable = false)
     private int id;
 
-    @Column(name = "phone_number", nullable = true, length = 20)
-    private String country;
-
-    @Column(name = "email", nullable = true, length = 128)
+    @Column(name = "email", nullable = false, unique = true, length = 128)
     private String email;
+
+    @Column(name = "phone_number", nullable = true, length = 20)
+    private String phoneNumber;
 
     @Column(name = "description", nullable = true, length = 256)
     private String description;
