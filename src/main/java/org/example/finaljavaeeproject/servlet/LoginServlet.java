@@ -1,6 +1,6 @@
 package org.example.finaljavaeeproject.servlet;
 
-import org.example.finaljavaeeproject.dao.UserDaoImpl;
+import org.example.finaljavaeeproject.dao.impl.userdaoimpl.UserDaoImpl;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 import org.example.finaljavaeeproject.util.ServletUtil;

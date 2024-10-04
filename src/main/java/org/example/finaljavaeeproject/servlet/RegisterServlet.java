@@ -2,8 +2,8 @@ package org.example.finaljavaeeproject.servlet;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.example.finaljavaeeproject.dao.RoleDaoImpl;
-import org.example.finaljavaeeproject.dao.UserDaoImpl;
+import org.example.finaljavaeeproject.dao.impl.userdaoimpl.RoleDaoImpl;
+import org.example.finaljavaeeproject.dao.impl.userdaoimpl.UserDaoImpl;
 import org.example.finaljavaeeproject.entity.user.User;
 import org.example.finaljavaeeproject.util.EncryptDecryptUtils;
 import org.example.finaljavaeeproject.util.ServletUtil;

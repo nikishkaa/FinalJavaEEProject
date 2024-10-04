@@ -1,7 +1,7 @@
 package org.example.finaljavaeeproject.util;
 
-import org.example.finaljavaeeproject.dao.RoleDaoImpl;
-import org.example.finaljavaeeproject.dao.UserDaoImpl;
+import org.example.finaljavaeeproject.dao.impl.userdaoimpl.RoleDaoImpl;
+import org.example.finaljavaeeproject.dao.impl.userdaoimpl.UserDaoImpl;
 import org.example.finaljavaeeproject.entity.user.Role;
 import org.example.finaljavaeeproject.entity.user.User;
 
