@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.finaljavaeeproject.entity.announcement.HorseAnnouncement;
 
 import java.util.Set;
 
@@ -28,7 +27,4 @@ public class UserAddress {
 
     @OneToMany(mappedBy = "address")
     private Set<User> users;
-
-    @OneToMany(mappedBy = "address")
-    private Set<HorseAnnouncement> announcements;
 }

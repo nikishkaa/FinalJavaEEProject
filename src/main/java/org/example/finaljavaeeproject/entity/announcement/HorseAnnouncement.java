@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.horse.Horse;
 import org.example.finaljavaeeproject.entity.user.User;
-import org.example.finaljavaeeproject.entity.user.UserAddress;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -40,10 +39,6 @@ public class HorseAnnouncement {
     @ManyToOne
     @JoinColumn(name = "horse_id", nullable = false)
     private Horse horse;
-
-    @ManyToOne
-    @JoinColumn(name = "address_id", nullable = false)
-    private UserAddress address;
 
     @ManyToOne
     @JoinColumn(name = "seller_id", nullable = false)
