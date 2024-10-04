@@ -24,8 +24,8 @@ public class StableReview {
     @Column(name = "comment", nullable = true, length = 1024)
     private String comment;
 
-    @Column(name = "date", nullable = false)
-    private Date date;
+    @Column(name = "created_ts", nullable = false)
+    private Timestamp createdTs;
 
 
     @ManyToOne
