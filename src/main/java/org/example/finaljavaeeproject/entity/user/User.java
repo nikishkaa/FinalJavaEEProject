@@ -66,7 +66,7 @@ public class User {
     @OneToMany(mappedBy = "coach")
     private Set<Workout> coach;
 
-    @OneToMany(mappedBy = "seller")
+    @OneToMany(mappedBy = "sellerId")
     private Set<HorseAnnouncement> announcements;
 
 

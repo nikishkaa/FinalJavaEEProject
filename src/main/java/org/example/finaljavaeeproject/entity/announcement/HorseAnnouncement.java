@@ -47,7 +47,7 @@ public class HorseAnnouncement {
 
     @ManyToOne
     @JoinColumn(name = "seller_id", nullable = false)
-    private User seller;
+    private User sellerId;
 
 
     @OneToMany(mappedBy = "announcement")
