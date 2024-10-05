@@ -81,6 +81,7 @@ public class AddAllTestDataToDB {
         workoutTypeDao = new WorkoutTypeDaoImpl();
     }
 
+
     public static void main(String[] args) {
         createData();
         System.out.println("Data Created");
