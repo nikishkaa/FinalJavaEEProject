@@ -88,7 +88,7 @@ public class AddAllTestDataToDB {
 
     }
 
-    public static void createData() {
+    private static void createData() {
         createUserAddress();
         createRoles();
         createUsers();
@@ -111,7 +111,7 @@ public class AddAllTestDataToDB {
         createWorkout();
     }
 
-    public static void createUsers() {
+    private static void createUsers() {
         User user1 = new User();
         String email = "bob@gmail.com";
 
@@ -131,106 +131,57 @@ public class AddAllTestDataToDB {
         }
     }
 
-    public static void createRoles() {
-        Role defaultUserRole = new Role();
-        defaultUserRole.setName("DEFAULT_USER");
-
-        Role stableCoachRole = new Role();
-        stableCoachRole.setName("STABLE_COACH");
-
-        Role horseOwnerRole = new Role();
-        horseOwnerRole.setName("HORSE_OWNER");
-
-        Role stableManagerRole = new Role();
-        stableManagerRole.setName("STABLE_MANAGER");
-
-        Role stableOwnerRole = new Role();
-        stableOwnerRole.setName("STABLE_OWNER");
-
-        Role adminRole = new Role();
-        adminRole.setName("ADMIN");
-        adminRole.setDescription("Отладочная роль");
-
-        List<Role> roles = new ArrayList<>();
-        roles.add(defaultUserRole);
-        roles.add(stableCoachRole);
-        roles.add(horseOwnerRole);
-        roles.add(stableManagerRole);
-        roles.add(stableOwnerRole);
-        roles.add(adminRole);
-
-
-        roleDao.createAll(roles);
-        System.out.println("Roles Created");
+    private static void createRoles() {
+        createRole("DEFAULT_USER", null);
+        createRole("STABLE_COACH", null);
+        createRole("HORSE_OWNER", null);
+        createRole("STABLE_MANAGER", null);
+        createRole("STABLE_OWNER", null);
+        createRole("ADMIN", "Отладочная роль");
     }
 
-    public static void createUserAddress() {
-        UserAddress userAddressFirst = new UserAddress();
-        userAddressFirst.setCountry("Belarus");
-        userAddressFirst.setRegion("Minsk");
-
-        UserAddress userAddressSecond = new UserAddress();
-        userAddressSecond.setCountry("Belarus");
-        userAddressSecond.setRegion("Brest");
-
-        UserAddress userAddressThird = new UserAddress();
-        userAddressThird.setCountry("Poland");
-        userAddressThird.setRegion("Poland");
-
-
-        List<UserAddress> userAddresses = new ArrayList<>();
-        userAddresses.add(userAddressFirst);
-        userAddresses.add(userAddressSecond);
-        userAddresses.add(userAddressThird);
-
-        userAddressDao.createAll(userAddresses);
+    private static void createRole(String name, String description) {
+        Role role = new Role();
+        role.setName(name);
+        role.setDescription(description);
+        roleDao.create(role);
     }
 
-    public static void createUserPhoto() {
+
+    private static void createUserAddress() {
+        initUserAddress("Belarus", "Minsk");
+        initUserAddress("Belarus", "Brest");
+        initUserAddress("Poland", "Poland");
+    }
+
+    private static void initUserAddress(String country, String region) {
+        UserAddress userAddress = new UserAddress();
+        userAddress.setCountry(country);
+        userAddress.setRegion(region);
+        userAddressDao.create(userAddress);
+    }
+
+    private static void createUserPhoto() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        UserPhoto userPhotoFirst = new UserPhoto();
-        userPhotoFirst.setPhotoOrder(1);
-        userPhotoFirst.setPhotoUrl("http://PhotoFirst");
-        userPhotoFirst.setCreatedTs(timestamp);
-        userPhotoFirst.setUserId(userDao.findById(1));
-
-        UserPhoto userPhotoSecond = new UserPhoto();
-        userPhotoSecond.setPhotoOrder(2);
-        userPhotoSecond.setPhotoUrl("http://PhotoSecond");
-        userPhotoSecond.setCreatedTs(timestamp);
-        userPhotoSecond.setUserId(userDao.findById(1));
-
-        UserPhoto userPhotoThird = new UserPhoto();
-        userPhotoThird.setPhotoOrder(3);
-        userPhotoThird.setPhotoUrl("http://PhotoFour");
-        userPhotoThird.setCreatedTs(timestamp);
-        userPhotoThird.setUserId(userDao.findById(1));
-
-        UserPhoto userPhotoForty = new UserPhoto();
-        userPhotoForty.setPhotoOrder(1);
-        userPhotoForty.setPhotoUrl("http://PhotoFirst");
-        userPhotoForty.setCreatedTs(timestamp);
-        userPhotoForty.setUserId(userDao.findById(1));
-
-        UserPhoto userPhotoFive = new UserPhoto();
-        userPhotoFive.setPhotoOrder(2);
-        userPhotoFive.setPhotoUrl("http://PhotoSecond");
-        userPhotoFive.setCreatedTs(timestamp);
-        userPhotoFive.setUserId(userDao.findById(1));
-
-        List<UserPhoto> userPhotos = new ArrayList<>();
-        userPhotos.add(userPhotoFirst);
-        userPhotos.add(userPhotoSecond);
-        userPhotos.add(userPhotoThird);
-        userPhotos.add(userPhotoForty);
-        userPhotos.add(userPhotoFive);
-
-
-        userPhotoDao.createAll(userPhotos);
+        initUserPhoto(1, "http://PhotoFirst", timestamp, 1);
+        initUserPhoto(2, "http://PhotoSecond", timestamp, 1);
+        initUserPhoto(3, "http://PhotoFour", timestamp, 1);
+        initUserPhoto(1, "http://PhotoFirst", timestamp, 1);
+        initUserPhoto(2, "http://PhotoSecond", timestamp, 1);
     }
 
-    public static void createHorse() {
+    private static void initUserPhoto(int photoOrder, String photoUrl, Timestamp createdTs, int userId) {
+        UserPhoto userPhoto = new UserPhoto();
+        userPhoto.setPhotoOrder(photoOrder);
+        userPhoto.setPhotoUrl(photoUrl);
+        userPhoto.setCreatedTs(createdTs);
+        userPhoto.setUserId(userDao.findById(userId));
+
+        userPhotoDao.create(userPhoto);
+    }
+
+    private static void createHorse() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         Horse horse1 = new Horse();
@@ -267,7 +218,7 @@ public class AddAllTestDataToDB {
         horseDao.createAll(horses);
     }
 
-    public static void createHorseStatus() {
+    private static void createHorseStatus() {
         HorseStatus horseStatus1 = new HorseStatus();
         horseStatus1.setName("GOOD");
 
@@ -281,7 +232,7 @@ public class AddAllTestDataToDB {
         horseStatusDao.createAll(horsesStatus);
     }
 
-    public static void createHorsePhoto() {
+    private static void createHorsePhoto() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         HorsePhoto horsePhotoFirst = new HorsePhoto();
@@ -325,7 +276,7 @@ public class AddAllTestDataToDB {
     }
 
 
-    public static void createStable() {
+    private static void createStable() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         Stable stable1 = new Stable();
@@ -351,7 +302,7 @@ public class AddAllTestDataToDB {
         stableDao.createAll(stables);
     }
 
-    public static void createStableContactInfo() {
+    private static void createStableContactInfo() {
         StableContactInfo stableContactInfo1 = new StableContactInfo();
         stableContactInfo1.setPhoneNumber("+375291233212");
         stableContactInfo1.setEmail("stable1@gmail.com");
@@ -370,7 +321,7 @@ public class AddAllTestDataToDB {
         stableContactInfoDao.createAll(stableContactInfos);
     }
 
-    public static void createStableAddress() {
+    private static void createStableAddress() {
         StableAddress stableAddress1 = new StableAddress();
         stableAddress1.setCountry("Belarus");
         stableAddress1.setRegion("Minsk");
@@ -397,7 +348,7 @@ public class AddAllTestDataToDB {
         stableAddressDao.createAll(stableAddresses);
     }
 
-    public static void createStablePhoto() {
+    private static void createStablePhoto() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         StablePhoto stablePhoto1 = new StablePhoto();
@@ -440,7 +391,7 @@ public class AddAllTestDataToDB {
         stablePhotoDao.createAll(stablePhotos);
     }
 
-    public static void createStableReview() {
+    private static void createStableReview() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         StableReview stableReview1 = new StableReview();
@@ -465,7 +416,7 @@ public class AddAllTestDataToDB {
         stableReviewDao.createAll(stableReviews);
     }
 
-    public static void createAnnouncementPhoto() {
+    private static void createAnnouncementPhoto() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         AnnouncementPhoto announcementPhoto1 = new AnnouncementPhoto();
@@ -508,7 +459,7 @@ public class AddAllTestDataToDB {
         announcementPhotoDao.createAll(announcementPhotos);
     }
 
-    public static void createHorseAnnouncement() {
+    private static void createHorseAnnouncement() {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         HorseAnnouncement horseAnnouncement1 = new HorseAnnouncement();
@@ -539,7 +490,7 @@ public class AddAllTestDataToDB {
     }
 
 
-    public static void createWorkoutType() {
+    private static void createWorkoutType() {
         WorkoutType workoutType1 = new WorkoutType();
         workoutType1.setName("field");
         workoutType1.setDescription("Horse riding in the field");
@@ -560,7 +511,7 @@ public class AddAllTestDataToDB {
         workoutTypeDao.createAll(workoutTypes);
     }
 
-    public static void createWorkout() {
+    private static void createWorkout() {
         Date date = new Date();
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
