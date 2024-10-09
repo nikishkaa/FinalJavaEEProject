@@ -27,6 +27,9 @@ public class Workout {
     @Column(name = "price", nullable = false)
     private int price;
 
+    @Column(name = "currency", nullable = false)
+    private String currency;
+
 
     @ManyToOne
     @JoinColumn(name = "workout_type_id", nullable = false)
