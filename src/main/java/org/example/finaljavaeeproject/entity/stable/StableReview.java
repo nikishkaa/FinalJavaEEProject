@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.finaljavaeeproject.entity.user.User;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -24,9 +25,6 @@ public class StableReview {
     @Column(name = "comment", nullable = true, length = 1024)
     private String comment;
 
-    @Column(name = "created_ts", nullable = false)
-    private Timestamp createdTs;
-
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -36,6 +34,10 @@ public class StableReview {
     @JoinColumn(name = "stable_id", nullable = false)
     private Stable stableId;
 
+
+    @Column(name = "created_ts", nullable = false)
+    @CreationTimestamp
+    private Timestamp createdTs;
 
     @Column(name = "updated_ts", nullable = true)
     private Timestamp updatedTs;
