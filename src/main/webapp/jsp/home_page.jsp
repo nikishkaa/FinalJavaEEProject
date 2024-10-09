@@ -27,15 +27,13 @@
 <a style="color: #ff385c" href="jsp/admin-panel.jsp">Admin Panel</a>
 <br>
 
-<%--TODO добавить сервисы--%>
-
 
 <%--TODO переделать под JSPX--%>
 <%
     Object object = session.getAttribute("user");
     if (object == null) {
 %>
-    <a class="nav-link" href="login">Login</a>
+<a class="nav-link" href="login">Login</a>
 </li>
 <%
 } else {
@@ -43,10 +41,10 @@
     User user = (User) object;
 
 %>
-    <h4>Hello, <%=user.getName()%>
-    </h4>
+<h4>Hello, <%=user.getName()%>
+</h4>
 
-    <a class="nav-link" href="logout">Logout</a>
+<a class="nav-link" href="logout">Logout</a>
 <%}%>
 
 
