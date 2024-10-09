@@ -110,24 +110,31 @@ public class AddAllTestDataToDB {
     }
 
     private static void createUsers() {
-        User user1 = new User();
-        String email = "bob@gmail.com";
+        createUser("bob@gmail.com", "TestBob", "123", null, false, 1, 1, null);
+        createUser("john@gmail.com", "TestJohn", "234", "112321", true, 2, 2, null);
+    }
+
+    private static void createUser(String email, String name, String password, String phoneNumber, boolean isActive, int roleId, int addressId, Timestamp updateTs) {
+        User user = new User();
 
         if (userDao.findByEmail(email) == null) {
-            user1.setName("TestBob");
-            user1.setEmail(email);
-            user1.setPassword(EncryptDecryptUtils.encrypt("123"));
-            user1.setActive(false);
-            user1.setRole(roleDao.findById(1));
-            user1.setAddress(userAddressDao.findById(1));
+            user.setName(name);
+            user.setEmail(email);
+            user.setPassword(EncryptDecryptUtils.encrypt(password));
+            user.setPhoneNumber(phoneNumber);
+            user.setActive(isActive);
+            user.setRole(roleDao.findById(roleId));
+            user.setAddress(userAddressDao.findById(addressId));
+            user.setUpdatedTs(updateTs);
 
-            userDao.create(user1);
+            userDao.create(user);
 
-            System.out.println(userDao);
+            System.out.println("user is created" + userDao);
         } else {
             System.out.println("User with such email already exists");
         }
     }
+
 
     private static void createRoles() {
         createRole("DEFAULT_USER", null);
@@ -161,20 +168,17 @@ public class AddAllTestDataToDB {
 
 
     private static void createUserPhotos() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-
-        createUserPhoto(1, "http://PhotoFirst", timestamp, 1);
-        createUserPhoto(2, "http://PhotoSecond", timestamp, 1);
-        createUserPhoto(3, "http://PhotoFour", timestamp, 1);
-        createUserPhoto(1, "http://PhotoFirst", timestamp, 1);
-        createUserPhoto(2, "http://PhotoSecond", timestamp, 1);
+        createUserPhoto(1, "http://PhotoFirst", 1);
+        createUserPhoto(2, "http://PhotoSecond", 1);
+        createUserPhoto(3, "http://PhotoFour", 1);
+        createUserPhoto(1, "http://PhotoFirst", 2);
+        createUserPhoto(2, "http://PhotoSecond", 2);
     }
 
-    private static void createUserPhoto(int photoOrder, String photoUrl, Timestamp createdTs, int userId) {
+    private static void createUserPhoto(int photoOrder, String photoUrl, int userId) {
         UserPhoto userPhoto = new UserPhoto();
         userPhoto.setPhotoOrder(photoOrder);
         userPhoto.setPhotoUrl(photoUrl);
-        userPhoto.setCreatedTs(createdTs);
         userPhoto.setUserId(userDao.findById(userId));
 
         userPhotoDao.create(userPhoto);
@@ -182,22 +186,18 @@ public class AddAllTestDataToDB {
 
 
     private static void createHorses() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         java.sql.Date age = new java.sql.Date(System.currentTimeMillis());
 
-        createHorse("Bob", "jj", age, timestamp, 1, 1, 1);
-        createHorse("john", "abc", age, timestamp, 2, 2, 1);
-
-
+        createHorse("Bob", "jj", age, 1, 1, 1);
+        createHorse("john", "abc", age, 2, 2, 1);
     }
 
-    private static void createHorse(String name, String breed, java.sql.Date age, Timestamp createdTs,
+    private static void createHorse(String name, String breed, java.sql.Date age,
                                     int horseStatusId, int horseStableOwner, int horseUserOwner) {
         Horse horse = new Horse();
         horse.setName(name);
         horse.setHorseBreed(breed);
         horse.setAge(age);
-        horse.setCreatedTs(createdTs);
         horse.setStatus(horseStatusDao.findById(horseStatusId));
         horse.setHorseStableOwner(stableDao.findById(horseStableOwner));
         horse.setHorseUserOwner(userDao.findById(horseUserOwner));
@@ -221,20 +221,17 @@ public class AddAllTestDataToDB {
 
 
     private static void createHorsePhotos() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-
-        createHorsePhoto(1, "http://PhotoFirst", timestamp, 1);
-        createHorsePhoto(2, "http://PhotoSecond", timestamp, 1);
-        createHorsePhoto(3, "http://PhotoFour", timestamp, 1);
-        createHorsePhoto(1, "http://PhotoFirst", timestamp, 2);
-        createHorsePhoto(2, "http://PhotoSecond", timestamp, 2);
+        createHorsePhoto(1, "http://PhotoFirst", 1);
+        createHorsePhoto(2, "http://PhotoSecond", 1);
+        createHorsePhoto(3, "http://PhotoFour", 1);
+        createHorsePhoto(1, "http://PhotoFirst", 2);
+        createHorsePhoto(2, "http://PhotoSecond", 2);
     }
 
-    private static void createHorsePhoto(int photoOrder, String photoUrl, Timestamp createdTs, int horseId) {
+    private static void createHorsePhoto(int photoOrder, String photoUrl, int horseId) {
         HorsePhoto horsePhoto = new HorsePhoto();
         horsePhoto.setPhotoOrder(photoOrder);
         horsePhoto.setPhotoUrl(photoUrl);
-        horsePhoto.setCreatedTs(createdTs);
         horsePhoto.setHorseId(horseDao.findById(horseId));
 
         horsePhotoDao.create(horsePhoto);
@@ -299,20 +296,18 @@ public class AddAllTestDataToDB {
 
 
     private static void createStablePhotos() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        createStablePhoto(1, "http://PhotoFirst", timestamp, 1);
-        createStablePhoto(2, "http://PhotoSecond", timestamp, 1);
-        createStablePhoto(3, "http://PhotoThird", timestamp, 1);
-        createStablePhoto(1, "http://PhotoSecond", timestamp, 2);
-        createStablePhoto(2, "http://PhotoThird", timestamp, 2);
+        createStablePhoto(1, "http://PhotoFirst", 1);
+        createStablePhoto(2, "http://PhotoSecond", 1);
+        createStablePhoto(3, "http://PhotoThird", 1);
+        createStablePhoto(1, "http://PhotoSecond", 2);
+        createStablePhoto(2, "http://PhotoThird", 2);
     }
 
-    private static void createStablePhoto(int photoOrder, String photoUrl, Timestamp createdTs, int stableId) {
+    private static void createStablePhoto(int photoOrder, String photoUrl, int stableId) {
         StablePhoto stablePhoto = new StablePhoto();
         stablePhoto.setPhotoOrder(photoOrder);
         stablePhoto.setPhotoUrl(photoUrl);
-        stablePhoto.setCreatedTs(createdTs);
         stablePhoto.setStableId(stableDao.findById(stableId));
 
         stablePhotoDao.create(stablePhoto);
@@ -320,17 +315,14 @@ public class AddAllTestDataToDB {
 
 
     private static void createStableReviews() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-
-        createStableReview(5, "GOOD place", 1, 1, timestamp);
-        createStableReview(2, "Can be good", 2, 1, timestamp);
+        createStableReview(5, "GOOD place", 1, 1);
+        createStableReview(2, "Can be good", 2, 1);
     }
 
-    private static void createStableReview(int rate, String comment, int stableId, int userId, Timestamp createdTs) {
+    private static void createStableReview(int rate, String comment, int stableId, int userId) {
         StableReview stableReview = new StableReview();
         stableReview.setStableRate(rate);
         stableReview.setComment(comment);
-        stableReview.setCreatedTs(createdTs);
         stableReview.setUserId(userDao.findById(userId));
         stableReview.setStableId(stableDao.findById(stableId));
 
@@ -339,19 +331,17 @@ public class AddAllTestDataToDB {
 
 
     private static void createAnnouncementPhotos() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        createAnnouncementPhoto(1, "http://PhotoFirst", timestamp, 1);
-        createAnnouncementPhoto(2, "http://PhotoSecond", timestamp, 1);
-        createAnnouncementPhoto(3, "http://PhotoThird", timestamp, 1);
-        createAnnouncementPhoto(1, "http://PhotoFirst", timestamp, 2);
-        createAnnouncementPhoto(2, "http://PhotoSecond", timestamp, 2);
+        createAnnouncementPhoto(1, "http://PhotoFirst", 1);
+        createAnnouncementPhoto(2, "http://PhotoSecond", 1);
+        createAnnouncementPhoto(3, "http://PhotoThird", 1);
+        createAnnouncementPhoto(1, "http://PhotoFirst", 2);
+        createAnnouncementPhoto(2, "http://PhotoSecond", 2);
     }
 
-    private static void createAnnouncementPhoto(int photoOrder, String photoUrl, Timestamp createdTs, int announcementId) {
+    private static void createAnnouncementPhoto(int photoOrder, String photoUrl, int announcementId) {
         AnnouncementPhoto announcementPhoto = new AnnouncementPhoto();
         announcementPhoto.setPhotoOrder(photoOrder);
         announcementPhoto.setPhotoUrl(photoUrl);
-        announcementPhoto.setCreatedTs(createdTs);
         announcementPhoto.setAnnouncement(horseAnnouncementDao.findById(announcementId));
 
         announcementPhotoDao.create(announcementPhoto);
@@ -399,13 +389,12 @@ public class AddAllTestDataToDB {
 
     private static void createWorkouts() {
         Date date = new Date();
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        createWorkout(date, 1, 1, 1, 1, 1, 40, "BYN", timestamp);
-        createWorkout(date, 2, 1, 2, 2, 1, 50, "PLN", timestamp);
+        createWorkout(date, 1, 1, 1, 1, 1, 40, "BYN");
+        createWorkout(date, 2, 1, 2, 2, 1, 50, "PLN");
     }
 
-    private static void createWorkout(Date date, int workoutTypeId, int clientId, int stableId, int horseId, int coachId, int price, String currency, Timestamp createdTs) {
+    private static void createWorkout(Date date, int workoutTypeId, int clientId, int stableId, int horseId, int coachId, int price, String currency) {
         Workout workout = new Workout();
         workout.setDate(date);
         workout.setWorkoutType(workoutTypeDao.findById(workoutTypeId));
@@ -415,7 +404,6 @@ public class AddAllTestDataToDB {
         workout.setCoach(userDao.findById(coachId));
         workout.setPrice(price);
         workout.setCurrency(currency);
-        workout.setCreatedTs(createdTs);
 
         workoutDao.create(workout);
     }
