@@ -70,7 +70,7 @@ public class HibernateAnnotationUtil {
         dbSettings.put(Environment.URL, "jdbc:mysql://localhost:3308/final_project_db");
         dbSettings.put(Environment.USER, "root");
         dbSettings.put(Environment.PASS, "");
-        dbSettings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
+        dbSettings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         dbSettings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
         dbSettings.put(Environment.SHOW_SQL, "true");
         dbSettings.put(Environment.HBM2DDL_AUTO, "create");
