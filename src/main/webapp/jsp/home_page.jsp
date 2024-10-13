@@ -21,7 +21,6 @@
 <a style="color: #ff385c" href="recover">Forgot Password</a>
 <br>
 
-
 <a style="color: #ff385c" href="logout">Logout</a>
 <br>
 <a style="color: #ff385c" href="jsp/admin-panel.jsp">Admin Panel</a>
