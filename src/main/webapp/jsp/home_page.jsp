@@ -13,6 +13,7 @@
 </head>
 <body>
 
+
 <h1 style="color: #ff385c">HorseNB</h1>
 <a style="color: #ff385c" href="login">Login</a>
 <br>
